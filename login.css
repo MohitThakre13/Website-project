@@ -19,7 +19,9 @@
 }
 #forgotpassword{
     float:right;
-    margin-right: 30px; 
+    margin-top: 4px;
+    margin-right: 40px; 
+    font-size: x-small;
 }
 
 #login input{
