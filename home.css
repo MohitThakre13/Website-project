@@ -1,0 +1,42 @@
+*{
+    margin:0px ;
+
+}
+
+#navigationbar{
+    background-color: black;
+    display:flex;
+    justify-content: right;
+    height: 50px;
+    align-items: center;
+    position:sticky;
+    top:0px; 
+    
+}
+
+#navigationbar ul{
+    margin-right: 30px;
+    color:white ;
+    display:flex; 
+    list-style: none;
+    
+}
+#navigationbar ul li{
+    margin: 0px 10px;
+}
+#navigationbar ul li a{
+    text-decoration: none;
+    color:white ; 
+    width:auto;
+    
+    
+}
+#navigationbar ul li a:hover{
+    background-color:white ;
+    color: black ;
+    border-radius: 5px;
+}
+.trial{
+    height: 1100px ;
+}
+
