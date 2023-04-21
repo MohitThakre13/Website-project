@@ -70,6 +70,27 @@
     display: flex ;
     justify-content: center;
     z-index: 10 ;
-
+    transform-style: preserve-3d;
+    transition:transform 0.5s ;
+    /* transition-duration: s; */
+    /* transform: rotate3d(); */
     
+    
+}
+
+.itemback{
+    visibility: hidden;
+}
+.itemfront , .itemback{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.item:hover{
+    transform:rotateY(180deg);
+    /* visibility: visible; */
+}
+.itemback{
+    transition: all;
+    transform: rotateY(180deg);
 }
