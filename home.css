@@ -11,6 +11,7 @@
     align-items: center;
     position:sticky;
     top:0px; 
+    z-index: 100;
     
 }
 
@@ -23,20 +24,52 @@
 }
 #navigationbar ul li{
     margin: 0px 10px;
+    border:2px solid white ;
+    padding: 3px;
+    border-radius:19px ;
 }
 #navigationbar ul li a{
+    padding: 13px;
     text-decoration: none;
     color:white ; 
-    width:auto;
-    
-    
 }
-#navigationbar ul li a:hover{
-    background-color:white ;
-    color: black ;
-    border-radius: 5px;
-}
+
 .trial{
     height: 1100px ;
 }
 
+.maincenter{
+   
+    height: 300px;
+    display: flex;
+    border: 2px solid coral;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    
+    border:2px solid brown;
+    height:422px ;
+    display:flex ;
+    /* background: url(https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg) ; */
+
+    justify-content: center;
+
+}
+
+.item{
+    margin:30px ;
+    width:300px ;
+    height:366px; 
+    border:1px solid purple ;
+    background-color: rgba(255,255, 255, .05);
+    box-shadow: 0 0 5px rgba(0,0,0 ,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 10px ;
+    display: flex ;
+    justify-content: center;
+    z-index: 10 ;
+
+    
+}
