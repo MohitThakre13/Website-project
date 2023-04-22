@@ -126,3 +126,23 @@
     font-size: x-large;
 }
 
+.submit{
+    position:absolute ;
+    bottom:80px; 
+    font-size: medium;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    right:-70px ;
+    background-image: linear-gradient(90deg, #1b1d1c, #546159);
+    color: #fdfbfb;
+    transition: all;
+  
+  
+  
+    
+}
+.submit:hover{
+    /* */
+    border:2px linear-gradient(90deg, #1b1d1c, #546159);;
+}
