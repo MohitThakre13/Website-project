@@ -1,6 +1,5 @@
 *{
     margin:0px ;
-
 }
 
 #navigationbar{
@@ -49,20 +48,16 @@
 
 .content{
     
-    border:2px solid brown;
+    border:1px solid brown;
     height:422px ;
     display:flex ;
-    /* background: url(https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg) ; */
-
     justify-content: center;
-
 }
 
 .item{
     margin:30px ;
     width:300px ;
     height:366px; 
-    border:1px solid purple ;
     background-color: rgba(255,255, 255, .05);
     box-shadow: 0 0 5px rgba(0,0,0 ,0.15);
     backdrop-filter: blur(10px);
@@ -72,25 +67,62 @@
     z-index: 10 ;
     transform-style: preserve-3d;
     transition:transform 0.5s ;
-    /* transition-duration: s; */
-    /* transform: rotate3d(); */
-    
-    
+    /* background-color: black; */
 }
-
 .itemback{
     visibility: hidden;
 }
-.itemfront , .itemback{
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
 .item:hover{
-    transform:rotateY(180deg);
-    /* visibility: visible; */
-}
-.itemback{
-    transition: all;
     transform: rotateY(180deg);
 }
+
+.itemback{
+    display: flex;
+    position: relative;
+    justify-content:center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+.item:hover .itemfront{
+    visibility:hidden;
+}
+
+.item:hover .itemback{
+    visibility: visible;
+    transform: rotateY(180deg);
+}
+.itemfront{
+    display: flex;
+    justify-content:center ;
+    position:relative ;
+    /* background-color:black */
+}
+.itemfront img{
+    height:200px; 
+    width:auto;
+    position:fixed  ;
+    left:70px; 
+    margin-top:30px ;
+    
+}
+.itemfront p{
+    position:fixed;
+    bottom:60px ;
+    left:70px;  
+    text-align: center;
+    width: 150px;
+}
+
+.itemback ul{
+    
+    /* margin: 4px; */
+    position: fixed;
+    width: 200px;
+    top:70px ;
+}
+.itmeback ul li{
+    /* margin:4px ; */
+    width: 50px;;
+    font-size: x-large;
+}
+
