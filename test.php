@@ -1,13 +1,13 @@
 <html>
     <body>
         <?php
-            $e="1234\n" ;
-            $f=rtrim($e, "\n") ;
-            echo "<p>" ;
-            echo  $f*2;
-            echo "</p>" ;
-            
+           $file=fopen('login.txt','w');
+	   fputs($file,"mohit\nmohitt\n8767249195\nmohitthakre@gmail.com\nmohit1\n");
+	   fclose($file);
              
         ?>
+
+       
+
     </body>
 </html>

@@ -1,0 +1,34 @@
+<html>
+    <head>
+            <title>Account Details</title>
+    </head>
+
+    <body>
+<?php
+        $file=fopen('login.txt','r');
+        $name = fgets($file);
+        $username = fgets($file);
+        $phonenumber = fgets($file);
+        $email = fgets($file);
+        $password = fgets($file);
+        fclose($file);
+
+        echo "<h1>Hello $username </h1> ";
+
+        echo "<form method=\"post\" action=\"edit.php\">
+        <p><label>Name : </label>
+        <input type=\"text\" name=\"name\" placeholder=\"$name\"></p>
+        <p>Username : $username (can't be changed !)</p>
+        <p><label>Phone No. : </label>
+        <input type=\"text\" name=\"number\" placeholder=\"$phonenumber\"></p>
+        <p><label>Email : </label>
+        <input type=\"email\" name=\"email\" placeholder=\"$email\"></p>
+        <p><label>Password : </label>
+        <input type=\"password\" name=\"password\" placeholder=\"Enter your new password\"></p>
+        <p><label>Confirm Password : </label>
+        <input type=\"password\" name=\"confirm_password\" placeholder=\"Confirm your new password\"></p>
+        <input type=\"submit\" value=\"Edit\" name=\"edit\">
+        </form>";
+?>
+    </body>
+</html>
