@@ -6,32 +6,31 @@
 	<body>
 		<h3><ins>Create New Account</ins></h3>
 		
-		<form method="post" action="After_sign_up.php">
+		<form action="create_account.php" method="post" >
 
-		<p><label for="nameid">Buyer's Name :</label>
-		<input type="text" name="name" id="nameid" placeholder="Enter Name" size="20"/></p>
+		<label for="nameid">Buyer's Name :</label>
+		<input type="text" name="name" required id="nameid" placeholder="Enter Name" size="20">
 		
-		<p><label for="emailid">Email :</label>
-		<input type="text" name="email" id="emailid" placeholder="Enter Email-Id" size="20"/></p>
+		<label for="emailid">Email :</label>
+		<input type="text" required name="email" id="emailid" placeholder="Enter Email-Id" size="20">
 
-		<p><label for="contactid">Buyer's Mobile Number :</label>
-
-		<select name="Country_type">
+		<label for="contactid">Buyer's Mobile Number :</label>
+		<select name="Country_type" >
 			<option value="+61">Australia +61</option>
 			<option value="+91">India +91</option>
 			<option value="+353">Ireland +353</option>
 			<option value="+41">Switzerland +41</option>
 		</select>
 
-		<input type="text" name="contact" id="contactid" placeholder="Enter Mobile No." size="20"/></p>
+		<input type="text" name="contact" id="contactid" required placeholder="Enter Mobile No." size="20">
 
-		<p><label for="passwordid">Password :</label>
-		<input type="password" name="password" id="passwordid" placeholder="atleast of 8 characters" size="20"/></p>
+		<label for="passwordid">Password :</label>
+		<input type="password" name="password" id="passwordid" required placeholder="atleast of 8 characters" size="20">
 
-		<p><label for="repassid">Re-enter Password :</label>
-		<input type="password" name="repass" id="repassid" placeholder="Re-enter password" size="20"/></p>
+		<label for="repassid">Re-enter Password :</label>
+		<input type="password" name="repass" id="repassid" required placeholder="Re-enter password" size="20">
 
-		<p><input type="submit" value="Continue"></p>
+		<input type="submit" name="submit" value="Continue"  >
 		
 		</form>
 
@@ -39,22 +38,44 @@
 
 
 <?php
-/*	if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["contact"]) && isset($_POST["password"]) && isset($_POST["repass"])  )
-		$accept = 1;
+
+// if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["contact"]) && isset($_POST["password"]) && isset($_POST["repass"])  ){
+		// $accept = 1;
+if(isset($_POST["submit"])){
 
                 //checking for same email
-                $file= fopen("All_userinfo.txt","r");
-                while( !feof ($file) ){
-                        for($i=0; $i<4; $i++){
-                                $email=fgets($file);
-                                if  ($i == 1){
-                                        if (strcmp($email,$_POST["email"]) == 0){
-                                                echo "\nEmail already exists";
-                                                $accept=0;
-                                        }
-                                }
-                        }
-		}
+                $file=fopen("All_userinfo.txt","r");
+                // while( !feof ($file) ){
+                //         for($i=0; $i<4; $i++){
+                //                 $email=fgets($file);
+                //                 if  ($i == 1){
+                //                         if ($email == $_POST["email"]."\n"){
+                //                                 echo "\nEmail already exists";
+                //                                 $accept=0;
+                //                         }
+                //                 }
+                //         }
+			$name="name" ;
+			$email="email" ;
+			$number="number" ;
+			$password="password" ;
+		while(!feof($file))
+		{
+			$name=fgets($file);
+			$email=fgets($file) ;
+			$number=fgets($file) ;
+			$password=fgets($file) ;
+			if($_POST["email"]."\n"==$email )
+			{
+				echo "User already exist!" ;
+			}
+			else if($_POST["contact"]."\n" == $number)
+			{
+				echo "Mobile number already in use!" ;
+			}
+		}			
+	
+
 		fclose($file);
 
 		//checking for same mobile no.
@@ -85,7 +106,9 @@
 			//password
 			fwrite($file,$_POST["name"]."\n".$_POST["email"]."\n".$_POST["Country_type"].$_POST["contact"]."\n".$_POST["password"]."\n");
 		}
- */?>
+ */
+}
+?>
 
 
 	</body>
