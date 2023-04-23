@@ -6,7 +6,7 @@
 	<body>
 		<h3><ins>Create New Account</ins></h3>
 		
-		<form method="post" action="create_account.php">
+		<form method="post" action="After_sign_up.php">
 
 		<p><label for="nameid">Buyer's Name :</label>
 		<input type="text" name="name" id="nameid" placeholder="Enter Name" size="20"/></p>
@@ -39,7 +39,7 @@
 
 
 <?php
-	if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["contact"]) && isset($_POST["password"]) && isset($_POST["repass"])  )
+/*	if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["contact"]) && isset($_POST["password"]) && isset($_POST["repass"])  )
 		$accept = 1;
 
                 //checking for same email
@@ -48,7 +48,7 @@
                         for($i=0; $i<4; $i++){
                                 $email=fgets($file);
                                 if  ($i == 1){
-                                        if ($email == $_POST["email"]){
+                                        if (strcmp($email,$_POST["email"]) == 0){
                                                 echo "\nEmail already exists";
                                                 $accept=0;
                                         }
@@ -75,7 +75,7 @@
 
 		//saving data
 
-		if ($accept == 1){
+/*		if ($accept == 1){
 			$file= fopen("All_userinfo.txt","a");
 
 			//format is:
@@ -85,7 +85,7 @@
 			//password
 			fwrite($file,$_POST["name"]."\n".$_POST["email"]."\n".$_POST["Country_type"].$_POST["contact"]."\n".$_POST["password"]."\n");
 		}
-?>
+ */?>
 
 
 	</body>
