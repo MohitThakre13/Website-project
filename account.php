@@ -12,6 +12,8 @@
         $email = fgets($file);
         $password = fgets($file);
         fclose($file);
+        if (strlen($name)==0) echo "<meta http-equiv = \"refresh\" content=\"0; url='login.php'\"/>";
+        else{
 
         echo "<h1>Hello $username </h1> ";
 
@@ -29,6 +31,7 @@
         <input type=\"password\" name=\"confirm_password\" placeholder=\"Confirm your new password\"></p>
         <input type=\"submit\" value=\"Edit\" name=\"edit\">
         </form>";
+        }
 ?>
     </body>
 </html>
