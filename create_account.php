@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<title>Account Registry</title>
 	</head>
@@ -44,7 +45,7 @@
 if(isset($_POST["submit"])){
 
                 //checking for same email
-                $file=fopen("All_userinfo.txt","r");
+               // $file=fopen('All_userinfo.txt','r');
                 // while( !feof ($file) ){
                 //         for($i=0; $i<4; $i++){
                 //                 $email=fgets($file);
@@ -55,7 +56,7 @@ if(isset($_POST["submit"])){
                 //                         }
                 //                 }
                 //         }
-			$name="name" ;
+		/*	$name="name" ;
 			$email="email" ;
 			$number="number" ;
 			$password="password" ;
@@ -76,7 +77,36 @@ if(isset($_POST["submit"])){
 		}			
 	
 
-		fclose($file);
+		fclose($file);*/
+		echo "<br>".$_POST["submit"];
+
+
+		$file = fopen('All_userinfo.txt', 'r');
+
+        $name = "name";
+        $email = "email";
+        $number = "number";
+        $password = "passowrd";
+
+        while (!feof($file)) {
+            $name = fgets($file);
+            $email = fgets($file);
+            $number = fgets($file);
+            $password = fgets($file);
+			echo "<br>hi";
+			echo "<br>".$_POST["email"]."<br>";
+			echo "<pre>".$email."hlo</pre>";
+			$check=strcmp($email,"\n");
+			echo "<br>".$check;
+
+            if (strcmp($_POST["email"]."\n",$email) == 0)
+            {
+                echo "Email Already Exist\n";
+                exit(1) ;
+            }
+        }
+
+		fclose(($file));
 
 		//checking for same mobile no.
        /*         $file= fopen("All_userinfo.txt","r");
@@ -96,7 +126,7 @@ if(isset($_POST["submit"])){
 
 		//saving data
 
-/*		if ($accept == 1){
+/*		if ($accept == 1){*/
 			$file= fopen("All_userinfo.txt","a");
 
 			//format is:
@@ -104,9 +134,9 @@ if(isset($_POST["submit"])){
 			//email
 			//mob no.
 			//password
-			fwrite($file,$_POST["name"]."\n".$_POST["email"]."\n".$_POST["Country_type"].$_POST["contact"]."\n".$_POST["password"]."\n");
-		}
- */
+			fputs($file,$_POST["name"]."\n".$_POST["email"]."\n".$_POST["Country_type"].$_POST["contact"]."\n".$_POST["password"]."\n");
+		//}
+				fclose($file);
 }
 ?>
 
