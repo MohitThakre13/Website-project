@@ -5,7 +5,12 @@
 
         <body>
 <?php
-
+            if (isset($_POST["log_out"])){
+                $file=fopen("login.txt","w");
+                fclose($file);
+                echo "<meta http-equiv = \"refresh\" content=\"0; url='home.html'\"/>";
+            }
+            else{
             $file=fopen('login.txt','r');
             $name = fgets($file);
             $username = fgets($file);
@@ -14,12 +19,12 @@
             $password = fgets($file);
             fclose($file);
 
-                if (strlen($_POST["name"]) != 0) echo"hi";//$name=$_POST["name"]."\n";
+                if (strlen($_POST["name"]) != 0) $name=$_POST["name"]."\n";
                 if (strlen($_POST["number"]) != 0)
                     {
-                        if (!is_numeric($_POST["number"]) && !(strlen($_POST["number"]) == 10))
+                        if (!is_numeric($_POST["number"]) || !(strlen($_POST["number"]) == 10))
                             {
-                                echo "Enter valid Phone No.<br><a href=\"Account.php\">Try editing again</a>";
+                                echo "Enter valid Phone No.<br>";
                                 exit(1);
                             }
                         $number=$_POST["number"]."\n";
@@ -30,11 +35,50 @@
 
                 fputs($file, $name);
                 fputs($file, $username);
-                fputs($file, $number);
+                fputs($file, $phonenumber);
                 fputs($file, $email);
                 fputs($file, $password);
-                echo "Edit is Successfull!" ;
+                echo "Edit is Successfull!<br>" ;
                 fclose($file) ;
+            }
+            $t=tempnam("","temp.txt");
+            $file = fopen('All_userinfo.txt', 'r');
+        while (!feof($file)) {
+                $name1 = fgets($file);
+                $username1 = fgets($file);
+                $phonenumber1 = fgets($file);
+                $email1 = fgets($file);
+                $password1 = fgets($file);
+                if  ($username == $username1){
+                    $file2 = fopen('temp.txt', 'a');
+
+                fputs($file2, $name);
+                fputs($file2, $username);
+                fputs($file2, $phonenumber);
+                fputs($file2, $email);
+                fputs($file2, $password);
+                fclose($file2);
+                }
+                else{
+                    $file2 = fopen('temp.txt', 'a');
+
+                fputs($file2, $name1);
+                fputs($file2, $username1);
+                fputs($file2, $phonenumber1);
+                fputs($file2, $email1);
+                fputs($file2, $password1);
+                fclose($file2);
+                }
+                
+                
+                
+            }
+            fclose($file);
+            unlink('All_userinfo.txt');
+            rename('temp.txt','All_userinfo.txt');
 ?>
+        <form action="Account.php">
+                    <input type="submit" value="Back to Account Details">
+        </form>
         </body>
 </html>

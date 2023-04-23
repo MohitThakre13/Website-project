@@ -11,11 +11,11 @@
         <input type="password" required name="password" placeholder="password"><br>
         <input type="submit" value="login" name="login">
     </form>
-    <a href=#>forgot password </a>
+    <a href=#>forgot password </a><br>
 
     <?php
     if (isset($_POST["login"])) {
-        $file = fopen('login.txt', 'r');
+        $file = fopen('All_userinfo.txt', 'r');
         while (!feof($file)) {
             $name = fgets($file);
             $username = fgets($file);
@@ -27,19 +27,33 @@
                 if($_POST["password"]."\n" == $password)
                 {
                     echo "Login Successfull!" ;
-                    echo "<a href=\"home.html\">Continue Shopping</a>" ;
+                   
+                    fclose($file);
+                    $file = fopen('login.txt', 'w');
+
+                    fputs($file, $name);
+                    fputs($file, $username);
+                    fputs($file, $phonenumber);
+                    fputs($file, $email);
+                    fputs($file, $password);
+                    fclose($file);
+                    echo "<meta http-equiv=\"refresh\" content=\"0; url='home.html'\"/>" ;
+                    exit(1);
                 }
                 else
                 {
-                    echo "Invalid Password!" ;
+                    echo "Invalid Password!<br>" ;
+                    exit(1);
                 }
             }
             else
             {
-                echo "Invalid Username or Email!" ;
+                echo "Invalid Username or Email!<br>" ;
+                exit(1);
             }
 
         }
+        fclose($file);
     }
     ?>
 </body>

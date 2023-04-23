@@ -28,10 +28,21 @@
         <p><label>Password : </label>
         <input type=\"password\" name=\"password\" placeholder=\"Enter your new password\"></p>
         <p><label>Confirm Password : </label>
-        <input type=\"password\" name=\"confirm_password\" placeholder=\"Confirm your new password\"></p>
+        <input type=\"password\" name=\"confirm_password\" placeholder=\"Confirm your new password\" size=\"22\"></p>
         <input type=\"submit\" value=\"Edit\" name=\"edit\">
+        &nbsp&nbsp<input type=\"submit\" name=\"log_out\" value=\"log out\">
         </form>";
         }
+?>
+<!--            <form action="account.php">
+                &nbsp&nbsp<input type="submit" name="log out" value="log out">
+            </form>-->
+<?php
+          /*  if (isset($_GET["log out"])){
+                $file=fopen("login.txt","w");
+                fclose($file);
+                echo "<meta http-equiv = \"refresh\" content=\"0; url='home.html'\"/>";
+            }*/
 ?>
     </body>
 </html>
