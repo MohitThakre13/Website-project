@@ -266,38 +266,38 @@
     <?php
 
 
-    $file = fopen('userinfo.txt', 'a');
+    $file = fopen('cart.txt', 'a');
     if (isset($_POST["IPHONE14PRO"])) {
         fputs($file, "IPHONE 14 PRO \n");
-        fputs($file, "1,19,999 \n");
+        fputs($file, "119999 \n");
         // fputs($file, "https://rukminim1.flixcart.com/image/312/312/xif0q/mobile/y/l/p/-original-imaghxemc3wtcuhb.jpeg?q=70\n");
     } elseif (isset($_POST["IPHONE14"])) {
         fputs($file, "IPHONE 14\n");
-        fputs($file, "71,999 \n");
+        fputs($file, "71999 \n");
         // fputs($file, "https://rukminim1.flixcart.com/image/312/312/xif0q/mobile/9/e/e/-original-imaghx9q5rvcdghy.jpeg?q=70\n");
     } elseif (isset($_POST["IPHONE13"])) {
         fputs($file, "IPHONE 13\n");
-        fputs($file, "91,999 \n");
+        fputs($file, "91999 \n");
         // fputs($file, "https://rukminim1.flixcart.com/image/312/312/l0igvww0/mobile/r/q/m/-original-imagca5ajerqpfjy.jpeg?q=70\n");
     } elseif (isset($_POST["IPHONE13MINI"])) {
         fputs($file, "IPHONE 13 MINI\n");
-        fputs($file, "91,999 \n");
+        fputs($file, "91999 \n");
         // fputs($file, "https://rukminim1.flixcart.com/image/312/312/ktketu80/mobile/a/i/l/iphone-13-mini-mlk93hn-a-apple-original-imag6vp6x67yypzk.jpeg?q=70\n");
     } elseif (isset($_POST["GALAXYS23"])) {
         fputs($file, "GALAXY S23\n");
-        fputs($file, "79,999 \n");
+        fputs($file, "79999 \n");
         // fputs($file, "https://rukminim1.flixcart.com/image/312/312/xif0q/mobile/s/j/p/-original-imagmg6gmq9kzq9j.jpeg?q=70\n");
     } elseif (isset($_POST["GALAXYS23ULTRA"])) {
         fputs($file, "GALAXY S23 ULTRA\n");
-        fputs($file, "1,59,999 \n");
+        fputs($file, "159999 \n");
         // fputs($file, "https://rukminim1.flixcart.com/image/312/312/xif0q/mobile/k/1/o/-original-imagmg6gz3bsgan7.jpeg?q=70\n");
     } elseif (isset($_POST["GALAXYZFLIP4"])) {
         fputs($file, "GALAXY Z FLIP 4\n");
-        fputs($file, "94,999 \n");
+        fputs($file, "94999 \n");
         // fputs($file, "https://rukminim1.flixcart.com/image/312/312/xif0q/mobile/h/e/d/-original-imagh7nnemnbgtts.jpeg?q=70\n");
     } elseif (isset($_POST["GALAXYZFOLD3"])) {
         fputs($file, "GALAXY Z FOLD 3\n");
-        fputs($file, "1,49,999 \n");
+        fputs($file, "149999 \n");
         // fputs($file, "https://rukminim1.flixcart.com/image/312/312/ksqeky80/mobile/x/7/1/galaxy-z-fold3-5g-sm-f926bzgdinu-samsung-original-imag68q6hpdwmngw.jpeg?q=70\n");
     }
 
