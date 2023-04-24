@@ -1,10 +1,12 @@
 <html>
-    <head>
-            <title>Account Details</title>
-            
-    </head>
 
-    <body>
+<head>
+    <title>Account Details</title>
+    <link rel="stylesheet" href="account.css">
+
+</head>
+
+<body>
     <nav id="navigationbar">
         <ul id="Menubars">
             <li><a href="home.html">HOME</a></li>
@@ -13,16 +15,16 @@
             <li><a href="account.php">ACCOUNT</a></li>
         </ul>
     </nav>
-<?php
-        $file=fopen('login.txt','r');
-        $name = fgets($file);
-        $username = fgets($file);
-        $phonenumber = fgets($file);
-        $email = fgets($file);
-        $password = fgets($file);
-        fclose($file);
-        if (strlen($name)==0) echo "<meta http-equiv = \"refresh\" content=\"0; url='login.php'\"/>";
-        else{
+    <?php
+    $file = fopen('login.txt', 'r');
+    $name = fgets($file);
+    $username = fgets($file);
+    $phonenumber = fgets($file);
+    $email = fgets($file);
+    $password = fgets($file);
+    fclose($file);
+    if (strlen($name) == 0) echo "<meta http-equiv = \"refresh\" content=\"0; url='login.php'\"/>";
+    else {
 
         echo "<h1>Hello $username </h1> ";
 
@@ -41,17 +43,18 @@
         <input type=\"submit\" value=\"Edit\" name=\"edit\">
         &nbsp&nbsp<input type=\"submit\" name=\"log_out\" value=\"log out\">
         </form>";
-        }
-?>
-<!--            <form action="account.php">
+    }
+    ?>
+    <!--            <form action="account.php">
                 &nbsp&nbsp<input type="submit" name="log out" value="log out">
             </form>-->
-<?php
-          /*  if (isset($_GET["log out"])){
+    <?php
+    /*  if (isset($_GET["log out"])){
                 $file=fopen("login.txt","w");
                 fclose($file);
                 echo "<meta http-equiv = \"refresh\" content=\"0; url='home.html'\"/>";
             }*/
-?>
-    </body>
+    ?>
+</body>
+
 </html>

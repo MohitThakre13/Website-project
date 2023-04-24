@@ -2,12 +2,12 @@
 
 <head>
     <title>Login
-         </title>
-         
+    </title>
+
 </head>
 
 <body>
-<nav id="navigationbar">
+    <nav id="navigationbar">
         <ul id="Menubars">
             <li><a href="home.html">HOME</a></li>
             <li><a href="cart.php">CART</a></li>
@@ -32,12 +32,10 @@
             $phonenumber = fgets($file);
             $email = fgets($file);
             $password = fgets($file);
-            if($_POST["usernameoremail"]."\n" == $username ||  $_POST["usernameoremail"]."\n" == $email)
-            {
-                if($_POST["password"]."\n" == $password)
-                {
-                    echo "Login Successfull!" ;
-                   
+            if ($_POST["usernameoremail"] . "\n" == $username ||  $_POST["usernameoremail"] . "\n" == $email) {
+                if ($_POST["password"] . "\n" == $password) {
+                    echo "Login Successfull!";
+
                     fclose($file);
                     $file = fopen('login.txt', 'w');
 
@@ -47,21 +45,16 @@
                     fputs($file, $email);
                     fputs($file, $password);
                     fclose($file);
-                    echo "<meta http-equiv=\"refresh\" content=\"0; url='home.html'\"/>" ;
+                    echo "<meta http-equiv=\"refresh\" content=\"0; url='home.html'\"/>";
+                    exit(1);
+                } else {
+                    echo "Invalid Password!<br>";
                     exit(1);
                 }
-                else
-                {
-                    echo "Invalid Password!<br>" ;
-                    exit(1);
-                }
-            }
-            else
-            {
-                echo "Invalid Username or Email!<br>" ;
+            } else {
+                echo "Invalid Username or Email!<br>";
                 exit(1);
             }
-
         }
         fclose($file);
     }

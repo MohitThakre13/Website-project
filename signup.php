@@ -3,13 +3,13 @@
 <head>
     <title>
         SIGN UP
-        
+
     </title>
 
 </head>
 
 <body>
-<nav id="navigationbar">
+    <nav id="navigationbar">
         <ul id="Menubars">
             <li><a href="home.html">HOME</a></li>
             <li><a href="cart.php">CART</a></li>
@@ -42,43 +42,43 @@
         if ($_POST["password"] != $_POST["confirm_password"]) {
             echo "Password not matched!<br>";
             exit(1);
-        }
-        else if (!is_numeric($_POST["number"]) || !(strlen($_POST["number"]) == 10)) echo "Enter valid Phone No.<br>";
-        else{
-        $file = fopen('userinfo.txt', 'r');
-        while (!feof($file)) {
-            $name = fgets($file);
-            $username = fgets($file);
-            $phonenumber = fgets($file);
-            $email = fgets($file);
-            $password = fgets($file);
+        } else if (!is_numeric($_POST["number"]) || !(strlen($_POST["number"]) == 10)) echo "Enter valid Phone No.<br>";
+        else {
+            $file = fopen('userinfo.txt', 'r');
+            while (!feof($file)) {
+                $name = fgets($file);
+                $username = fgets($file);
+                $phonenumber = fgets($file);
+                $email = fgets($file);
+                $password = fgets($file);
 
-            if ($_POST["username"] . "\n" == $username) {
-                echo "Username Already Exist!";
-                exit(1);
-            } elseif ($_POST["email"] . "\n" == $email) {
-                echo "Email Already in use!";
-                exit(1);
-            } elseif ($_POST["number"] . "\n" == $phonenumber) {
-                echo "Phone number already in use!";
-                exit(1);
+                if ($_POST["username"] . "\n" == $username) {
+                    echo "Username Already Exist!";
+                    exit(1);
+                } elseif ($_POST["email"] . "\n" == $email) {
+                    echo "Email Already in use!";
+                    exit(1);
+                } elseif ($_POST["number"] . "\n" == $phonenumber) {
+                    echo "Phone number already in use!";
+                    exit(1);
+                }
             }
-        }
-        fclose($file);
+            fclose($file);
 
-        $file = fopen('userinfo.txt', 'a');
+            $file = fopen('userinfo.txt', 'a');
 
-        fputs($file, $_POST["name"]."\n");
-        fputs($file, $_POST["username"]."\n");
-        fputs($file, $_POST["number"]."\n");
-        fputs($file, $_POST["email"]."\n");
-        fputs($file, $_POST["password"]."\n");
-        echo "Signup Successfull" ;
-        fclose($file) ;
+            fputs($file, $_POST["name"] . "\n");
+            fputs($file, $_POST["username"] . "\n");
+            fputs($file, $_POST["number"] . "\n");
+            fputs($file, $_POST["email"] . "\n");
+            fputs($file, $_POST["password"] . "\n");
+            echo "Signup Successfull";
+            fclose($file);
         }
     }
 
 
     ?>
 </body>
+
 </html>
