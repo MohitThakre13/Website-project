@@ -1,42 +1,7 @@
 <html>
     <head>
             <title>Account Details</title>
-            <style>
-                *{
-    margin:0px ;
-}
-
-#navigationbar{
-    background-color: black;
-    display:flex;
-    justify-content: right;
-    height: 50px;
-    align-items: center;
-    position:sticky;
-    top:0px; 
-    z-index: 100;
-    
-}
-
-#navigationbar ul{
-    margin-right: 30px;
-    color:white ;
-    display:flex; 
-    list-style: none;
-    
-}
-#navigationbar ul li{
-    margin: 0px 10px;
-    border:2px solid white ;
-    padding: 3px;
-    border-radius:19px ;
-}
-#navigationbar ul li a{
-    padding: 13px;
-    text-decoration: none;
-    color:white ; 
-}
-            </style>
+            
     </head>
 
     <body>
