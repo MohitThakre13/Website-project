@@ -59,8 +59,8 @@ background: linear-gradient(129deg, rgba(0,0,0,1) 0%, rgba(93,90,90,1) 51%, rgba
     height:422px ;
     display:flex ;
     justify-content: center;
-    background: rgb(0,0,0);
-background: linear-gradient(129deg, rgba(0,0,0,1) 0%, rgba(93,90,90,1) 51%, rgba(0,0,0,1) 100%);
+    /* background: rgb(0,0,0); */
+/* background: linear-gradient(129deg, rgba(0,0,0,1) 0%, rgba(93,90,90,1) 51%, rgba(0,0,0,1) 100%); */
 }
 
 .item{
