@@ -76,6 +76,7 @@
                 fclose($cart);
 
                 $file = fopen("cartcount.txt", "r");
+                echo "<form action=\"checkout.php\" method=\"post\">"; 
                 while (!feof($file)) {
                     $model = fgets($file);
                     $eachprice = fgets($file);
@@ -86,12 +87,13 @@
                     if ($total != 0) {
                         echo "<tr style=\"height: 100px;\">
                 <td>$model</td>
-                <td>$quantity</td>
+                <td><input type=\"number\" size=\"3\" name=\"$model\" value=\"$quantity\"></td>
                 <td>$eachprice</td>
                 <td>$total</td>
               </tr>";
                     }
                 }
+                echo "</form>" ;
 
 
                 ?>
