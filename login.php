@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="login.css">
     <title>Login
     </title>
 
@@ -15,13 +16,17 @@
             <li><a href="account.php">ACCOUNT</a></li>
         </ul>
     </nav>
-    <h1>Login</h1>
-    <form action="login.php" method="post">
-        <input type="text" required name="usernameoremail" placeholder="Username or Email"><br>
-        <input type="password" required name="password" placeholder="password"><br>
-        <input type="submit" value="login" name="login">
-    </form>
-    <a href=#>forgot password </a><br>
+    <div class="loginbox">
+        <h1>Login</h1>
+        <form action="login.php" method="post">
+            <input type="text" required name="usernameoremail" placeholder="Username or Email"><br>
+            <input type="password" required name="password" placeholder="password"><br>
+            <div class="forgotandsubmit">
+            <input type="submit" value="login" name="login">
+        </form>
+        <a href=#>forgot password </a><br>
+    </div>
+    </div>
 
     <?php
     if (isset($_POST["login"])) {

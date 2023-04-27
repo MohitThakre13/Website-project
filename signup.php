@@ -5,6 +5,7 @@
         SIGN UP
 
     </title>
+    <link rel="stylesheet" href="signup.css">
 
 </head>
 
@@ -17,26 +18,32 @@
             <li><a href="account.php">ACCOUNT</a></li>
         </ul>
     </nav>
+    <div class="signup">
+        <h1> SIGN UP </h1>
 
-    <h1> SIGN UP </h1>
+        <form action="signup.php" method="post">
 
-    <form action="signup.php" method="post">
+            <input type="text" required name="name" >
+            <label alt="Name" placeholder="Name"></label>
+           
+            <input type="text" required name="username" >
+            <label alt="Username" placeholder="Username"></label>
 
-        <label>Name : </label>
-        <input type="text" required name="name" placeholder="Enter your name"><br>
-        <label>Username : </label>
-        <input type="text" required name="username" placeholder="Enter your username"><br>
-        <label>Phone No. : </label>
-        <input type="text" required name="number" placeholder="Enter your Phone number"><br>
-        <label>Email : </label>
-        <input type="email" required name="email" placeholder="Enter your email"><br>
-        <label>Password : </label>
-        <input type="password" required name="password" placeholder="Enter your password"><br>
-        <label>Confirm Password : </label>
-        <input type="password" required name="confirm_password" placeholder="Confirm Your password"><br>
-        <input type="submit" value="signup" name="signup">
-    </form>
+            <input type="number" required name="number" >
+            <label alt="Number" placeholder="Number"></label>
 
+            <input type="email" required name="email" >
+            <label alt="Email" placeholder="Email"></label>
+
+            <input type="password" required name="password" >
+            <label alt="Passord" placeholder="Passord"></label>
+
+            <input type="password" required name="confirm_password">
+            <label alt="Confirm Password" placeholder="Confirm Password"></label>
+
+            <input type="submit" value="signup" name="signup">
+        </form>
+    </div>
     <?php
     if (isset($_POST["signup"])) {
         if ($_POST["password"] != $_POST["confirm_password"]) {
