@@ -2,12 +2,8 @@
 
 <body>
     <?php
-    $file = fopen('All_userinfo.txt', 'w');
-    fputs($file, "mohit\nmohit1\n8767249195\nmohitthakre1@gmail.com\nmohit1\n");
-    fputs($file, "mohit\nmohit2\n8767249195\nmohitthakre2@gmail.com\nmohit1\n");
-    fputs($file, "mohit\nmohit3\n8767249195\nmohitthakre3@gmail.com\nmohit1\n");
-
-    fclose($file);
+    $name="hello" ;
+    echo '<form aciton="test.php" method="post"> <input type="submit" style="display:inline ;width:10px ; height:200px ;"> </form>' ;
 
     ?>
 
