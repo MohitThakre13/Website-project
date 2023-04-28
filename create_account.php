@@ -46,7 +46,7 @@
 	if (isset($_POST["submit"])) {
 
 		//checking for same email
-		// $file=fopen('All_userinfo.txt','r');
+		// $file=fopen('userinfo.txt','r');
 		// while( !feof ($file) ){
 		//         for($i=0; $i<4; $i++){
 		//                 $email=fgets($file);
@@ -82,7 +82,7 @@
 		echo "<br>" . $_POST["submit"];
 
 
-		$file = fopen('All_userinfo.txt', 'r');
+		$file = fopen('userinfo.txt', 'r');
 
 		$name = "name";
 		$email = "email";
@@ -109,7 +109,7 @@
 		fclose(($file));
 
 		//checking for same mobile no.
-		/*         $file= fopen("All_userinfo.txt","r");
+		/*         $file= fopen("userinfo.txt","r");
                 while( !feof ($file) ){
                         for($i=0; $i<4; $i++){
                                 $mob=fgets($file);
@@ -127,7 +127,7 @@
 		//saving data
 
 		/*		if ($accept == 1){*/
-		$file = fopen("All_userinfo.txt", "a");
+		$file = fopen("userinfo.txt", "a");
 
 		//format is:
 		//name

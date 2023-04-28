@@ -50,7 +50,7 @@
             </form>-->
     <?php
     /*  if (isset($_GET["log out"])){
-                $file=fopen("login.txt","w");
+                $file=fopen("userinfo.txt","w");
                 fclose($file);
                 echo "<meta http-equiv = \"refresh\" content=\"0; url='home.html'\"/>";
             }*/

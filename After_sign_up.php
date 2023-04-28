@@ -12,7 +12,7 @@
                 $accept = 1;
 
         //checking for same email
-        $file = fopen("All_userinfo.txt", "r");
+        $file = fopen("userinfo.txt", "r");
         while (!feof($file)) {
                 for ($i = 0; $i < 4; $i++) {
                         $email = fgets($file);

@@ -35,8 +35,11 @@
     color: white;
 
 }
-.sginup h1{
-    /* margin: 30px; */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .signup {
@@ -47,15 +50,19 @@
     align-items: center; */
     text-align: center;
     width: 300px;
-    padding: 40px;
-    margin:100px auto ;
-    /* margin-top: ; */
+    padding: 20px;
+    margin-left:42%;  
+    margin-top: 30px;
+}
+h2{
+    margin-top:10px ;
+    text-align: center;
 }
 
 .sginup label {
     display: block;
     text-align: left;
-}
+} 
 
 input[type="text"],
 input[type="password"],
@@ -63,13 +70,12 @@ input[type="number"],
 input[type="email"] {
     box-sizing: border-box;
     width: 100%;
-    height: calc(4em + 1px);
+    height: calc(4em + 0px);
     margin: 0 0 1em;
     padding: 1em;
     border: 1px solid #ccc;
     background: #fff;
     resize: none;
-    
     outline: none;
 }
 
