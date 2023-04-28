@@ -9,7 +9,7 @@
     if (isset($_POST["log_out"])) {
         $file = fopen("login.txt", "w");
         fclose($file);
-        echo "<meta http-equiv = \"refresh\" content=\"0; url='home.html'\"/>";
+        echo "<meta http-equiv = \"refresh\" content=\"0; url='login.php'\"/>";
     } else {
         $file = fopen('login.txt', 'r');
         $name = fgets($file);
@@ -19,7 +19,8 @@
         $password = fgets($file);
         fclose($file);
 
-        if (strlen($_POST["name"]) != 0) $name = $_POST["name"] . "\n";
+        if (strlen($_POST["name"]) != 0) 
+        {$name = $_POST["name"]."\n";}
         if (strlen($_POST["number"]) != 0) {
             if (!is_numeric($_POST["number"]) || !(strlen($_POST["number"]) == 10)) {
                 echo "Enter valid Phone No.<br>";
@@ -40,7 +41,7 @@
         fclose($file);
     }
     $t = tempnam("", "temp.txt");
-    $file = fopen('All_userinfo.txt', 'r');
+    $file = fopen('userinfo.txt', 'r');
     while (!feof($file)) {
         $name1 = fgets($file);
         $username1 = fgets($file);
@@ -68,8 +69,8 @@
         }
     }
     fclose($file);
-    unlink('All_userinfo.txt');
-    rename('temp.txt', 'All_userinfo.txt');
+    unlink('userinfo.txt');
+    rename('temp.txt', 'userinfo.txt');
     ?>
     <form action="Account.php">
         <input type="submit" value="Back to Account Details">

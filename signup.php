@@ -36,18 +36,19 @@
             <label alt="Email" placeholder="Email"></label>
 
             <input type="password" required name="password">
-            <label alt="Passord" placeholder="Passord"></label>
+            <label alt="Password" placeholder="Password"></label>
 
             <input type="password" required name="confirm_password">
             <label alt="Confirm Password" placeholder="Confirm Password"></label>
 
-            <input type="submit" value="signup" name="signup">
+            <input type="submit" value="signup" name="signup" style="height:25px; width:80px; margin-left:-4px ;">
+            <a style="margin-left:20% ;" href="login.php">Already have an account</a>
         </form>
     </div>
     <?php
     if (isset($_POST["signup"])) {
         if ($_POST["password"] != $_POST["confirm_password"]) {
-            echo "Password not matched!<br>";
+            echo "<h2>Password not matched!</h2><br>";
             exit(1);
         } else if (!is_numeric($_POST["number"]) || !(strlen($_POST["number"]) == 10)) echo "Enter valid Phone No.<br>";
         else {
@@ -60,13 +61,13 @@
                 $password = fgets($file);
 
                 if ($_POST["username"]."\n" == $username) {
-                    echo "Username Already Exist!";
+                    echo "<h2>Username Already Exist!</h2>";
                     exit(1);
                 } elseif ($_POST["email"]."\n" == $email) {
-                    echo "Email Already in use!";
+                    echo "<h2>Email Already in use!</h2>";
                     exit(1);
                 } elseif ($_POST["number"]."\n" == $phonenumber) {
-                    echo "Phone number already in use!";
+                    echo "<h2>Phone number already in use!</h2>";
                     exit(1);
                 }
             }
@@ -79,7 +80,9 @@
             fputs($file, $_POST["number"]."\n");
             fputs($file, $_POST["email"]."\n");
             fputs($file, $_POST["password"]."\n");
-            echo "Signup Successfull";
+            echo '<h2>Signup Successfull</h2>';
+            header( "refresh:3; url=login.php" ); 
+
 
             fclose($file);
         }

@@ -27,7 +27,7 @@
         <a href=#>forgot password </a><br>
         
     </div>
-    <a style="text-align:right;" href=signup.php>Create an new account</a><br>
+    <a style="margin-right:-15%; margin-top:-30%;" href=signup.php>Create an new account</a><br>
     </div>
 
     <?php
@@ -51,7 +51,8 @@
                     fputs($file1, $email);
                     fputs($file1, $password);
                     fclose($file1);
-                    echo "<meta http-equiv=\"refresh\" content=\"0; url='home.html'\"/>";
+                    echo '<h2>Login Successfull</h2>';
+            header( "refresh:3; url=account.php" ); 
                     exit(1);
                 } else {
                     echo "Invalid Credential!<br>";
