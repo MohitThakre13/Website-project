@@ -2,8 +2,13 @@
 
 <body>
     <?php
-    $name="hello" ;
-    echo '<form aciton="test.php" method="post"> <input type="submit" style="display:inline ;width:10px ; height:200px ;"> </form>' ;
+    $file = fopen ('userinfo.txt','w');
+    fputs($file, "Nishchay Rajput"."\n");
+    fputs($file, "cs1001"."\n");
+    fputs($file, "9770552424"."\n");
+    fputs($file, "mahajanshubham@gmail.com"."\n");
+    fputs($file, "123456"."\n");
+    fclose ($file);
 
     ?>
 

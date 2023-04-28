@@ -39,6 +39,7 @@
             $phonenumber = fgets($file);
             $email = fgets($file);
             $password = fgets($file);
+
             if ($_POST["usernameoremail"]."\n" == $username ||  $_POST["usernameoremail"]."\n" == $email) {
                 if ($_POST["password"]."\n" == $password) {
                     echo "Login Successfull!";
@@ -51,11 +52,23 @@
                     fputs($file1, $email);
                     fputs($file1, $password);
                     fclose($file1);
-                    echo '<h2>Login Successfull</h2>';
-            header( "refresh:3; url=account.php" ); 
+                    echo "<h2>Login Successfull</h2>"
+                    ."<meta http-equiv = \"refresh\" content=\"3; url='account.php'\"/>";
+                    
+                    $user="";
+                    
+                    $file_tmp = fopen ("username.txt","w");
+                    fputs($file_tmp,$username);
+                    fclose($file_tmp);
+                    $file_tmp = fopen ("username.txt","r");
+                    while (($m=fgetc($file_tmp)) != "\n") $user=$user.$m;
+                    fclose($file_tmp);
+                    chdir($user);
+                    
                     exit(1);
                 } else {
                     echo "Invalid Credential!<br>";
+                    exit(1);
                     
                 }
             }

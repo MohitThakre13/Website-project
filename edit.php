@@ -9,6 +9,10 @@
     if (isset($_POST["log_out"])) {
         $file = fopen("login.txt", "w");
         fclose($file);
+        $file = fopen("cart.txt", "w");
+        $file1 = fopen("cartcount.txt", "w");
+        fclose($file1);
+        fclose($file);
         echo "<meta http-equiv = \"refresh\" content=\"0; url='login.php'\"/>";
     } else {
         $file = fopen('login.txt', 'r');

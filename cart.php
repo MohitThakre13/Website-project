@@ -14,6 +14,13 @@
         </ul>
     </nav>
     <?php
+
+$user="";
+$file_tmp = fopen ("username.txt","r");
+while (($m=fgetc($file_tmp)) != "\n") $user=$user.$m;
+fclose($file_tmp);
+chdir($user);
+
     if (isset($_POST["clear"])) {
         $file = fopen("cart.txt", "w");
         $file1 = fopen("cartcount.txt", "w");
@@ -23,7 +30,8 @@
         exit(1) ;
     }
     $file=fopen('cart.txt','r') ;
-    $test=fgets($file); 
+    $test=fgets($file);
+    fclose($file);
     if(strlen($test) < 1)
     {
         echo "<h1 style=\"text-align:center; margin:45vh ; \">CART IS EMPTY</h1>" ;
@@ -103,7 +111,7 @@
                     if ($total != 0) {
                         echo "<tr style=\"height: 100px;\">
                 <td>$product</td>
-                <td><input type=\"number\" class=\"quantity\" name=\" \" value=\"$quantity\"></td>
+                <td><input type=\"number\" class=\"quantity\" name=\"$product\" value=\"$quantity\"></td>
                 <td>$eachprice</td>
                 <td>$total</td>
               </tr>";
@@ -126,7 +134,7 @@
         <input type="submit" name="clear" value="Remove ALL"><br>
     </form>
     <form action="checkout.php" method="post">
-    <input type="submit" name="checkout" value="checout"><br>
+    <input type="submit" name="checkout" value="checkout"><br>
 </body>
 
 </html>

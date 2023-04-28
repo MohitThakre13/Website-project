@@ -85,6 +85,12 @@
 
 
             fclose($file);
+            mkdir($_POST["username"]);
+            chdir($_POST["username"]);
+            $file = fopen ('cart.txt','w');
+            fclose ($file);
+            $file = fopen ('cartcount.txt','w');
+            fclose ($file);
         }
     }
 
