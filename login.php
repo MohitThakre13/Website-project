@@ -30,19 +30,19 @@
 
     <?php
     if (isset($_POST["login"])) {
-        $file = fopen('All_userinfo.txt', 'r');
+        $file = fopen('userinfo.txt', 'r');
         while (!feof($file)) {
             $name = fgets($file);
             $username = fgets($file);
             $phonenumber = fgets($file);
             $email = fgets($file);
             $password = fgets($file);
-            if ($_POST["usernameoremail"] . "\n" == $username ||  $_POST["usernameoremail"] . "\n" == $email) {
-                if ($_POST["password"] . "\n" == $password) {
+            if ($_POST["usernameoremail"]."\n" == $username ||  $_POST["usernameoremail"]."\n" == $email) {
+                if ($_POST["password"]."\n" == $password) {
                     echo "Login Successfull!";
 
                     fclose($file);
-                    $file = fopen('login.txt', 'w');
+                    $file = fopen('userinfo.txt', 'w');
 
                     fputs($file, $name);
                     fputs($file, $username);

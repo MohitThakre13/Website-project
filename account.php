@@ -16,7 +16,7 @@
         </ul>
     </nav>
     <?php
-    $file = fopen('login.txt', 'r');
+    $file = fopen('userinfo.txt', 'r');
     $name = fgets($file);
     $username = fgets($file);
     $phonenumber = fgets($file);
@@ -50,7 +50,7 @@
             </form>-->
     <?php
     /*  if (isset($_GET["log out"])){
-                $file=fopen("login.txt","w");
+                $file=fopen("userinfo.txt","w");
                 fclose($file);
                 echo "<meta http-equiv = \"refresh\" content=\"0; url='home.html'\"/>";
             }*/
