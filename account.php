@@ -16,7 +16,7 @@
         </ul>
     </nav>
     <?php
-    $file = fopen('userinfo.txt', 'r');
+    $file = fopen('login.txt', 'r');
     $name = fgets($file);
     $username = fgets($file);
     $phonenumber = fgets($file);

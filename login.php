@@ -25,7 +25,9 @@
             <input type="submit" value="login" name="login">
         </form>
         <a href=#>forgot password </a><br>
+        
     </div>
+    <a style="text-align:right;" href=signup.php>Create an new account</a><br>
     </div>
 
     <?php
@@ -41,26 +43,23 @@
                 if ($_POST["password"]."\n" == $password) {
                     echo "Login Successfull!";
 
-                    fclose($file);
-                    $file = fopen('userinfo.txt', 'w');
-
-                    fputs($file, $name);
-                    fputs($file, $username);
-                    fputs($file, $phonenumber);
-                    fputs($file, $email);
-                    fputs($file, $password);
-                    fclose($file);
+                    $file1 = fopen('login.txt', 'w');
+                    
+                    fputs($file1, $name);
+                    fputs($file1, $username);
+                    fputs($file1, $phonenumber);
+                    fputs($file1, $email);
+                    fputs($file1, $password);
+                    fclose($file1);
                     echo "<meta http-equiv=\"refresh\" content=\"0; url='home.html'\"/>";
                     exit(1);
                 } else {
-                    echo "Invalid Password!<br>";
-                    exit(1);
+                    echo "Invalid Credential!<br>";
+                    
                 }
-            } else {
-                echo "Invalid Username or Email!<br>";
-                exit(1);
             }
         }
+ 
         fclose($file);
     }
     ?>

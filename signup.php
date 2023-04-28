@@ -23,19 +23,19 @@
 
         <form action="signup.php" method="post">
 
-            <input type="text" required name="name" >
+            <input type="text" required name="name">
             <label alt="Name" placeholder="Name"></label>
-           
-            <input type="text" required name="username" >
+
+            <input type="text" required name="username">
             <label alt="Username" placeholder="Username"></label>
 
-            <input type="number" required name="number" >
+            <input type="number" required name="number">
             <label alt="Number" placeholder="Number"></label>
 
-            <input type="email" required name="email" >
+            <input type="email" required name="email">
             <label alt="Email" placeholder="Email"></label>
 
-            <input type="password" required name="password" >
+            <input type="password" required name="password">
             <label alt="Passord" placeholder="Passord"></label>
 
             <input type="password" required name="confirm_password">
@@ -59,13 +59,13 @@
                 $email = fgets($file);
                 $password = fgets($file);
 
-                if ($_POST["username"] . "\n" == $username) {
+                if ($_POST["username"]."\n" == $username) {
                     echo "Username Already Exist!";
                     exit(1);
-                } elseif ($_POST["email"] . "\n" == $email) {
+                } elseif ($_POST["email"]."\n" == $email) {
                     echo "Email Already in use!";
                     exit(1);
-                } elseif ($_POST["number"] . "\n" == $phonenumber) {
+                } elseif ($_POST["number"]."\n" == $phonenumber) {
                     echo "Phone number already in use!";
                     exit(1);
                 }
@@ -74,12 +74,13 @@
 
             $file = fopen('userinfo.txt', 'a');
 
-            fputs($file, $_POST["name"] . "\n");
-            fputs($file, $_POST["username"] . "\n");
-            fputs($file, $_POST["number"] . "\n");
-            fputs($file, $_POST["email"] . "\n");
-            fputs($file, $_POST["password"] . "\n");
+            fputs($file, $_POST["name"]."\n");
+            fputs($file, $_POST["username"]."\n");
+            fputs($file, $_POST["number"]."\n");
+            fputs($file, $_POST["email"]."\n");
+            fputs($file, $_POST["password"]."\n");
             echo "Signup Successfull";
+
             fclose($file);
         }
     }
