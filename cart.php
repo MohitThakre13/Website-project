@@ -37,6 +37,8 @@ chdir($user);
         echo "<h1 style=\"text-align:center; margin:45vh ; \">CART IS EMPTY</h1>" ;
         exit(1) ;
     }
+
+
     
     ?>
 

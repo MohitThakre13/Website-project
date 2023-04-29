@@ -19,12 +19,17 @@
         
 <?php   
 
+        //user ki directory me hi kaam krna hai
         $user="";
         $file_tmp = fopen ("username.txt","r");
         while (($m=fgetc($file_tmp)) != "\n") $user=$user.$m;
         fclose($file_tmp);
         chdir($user);
 
+        //
+
+
+        if(isset($_POST['checkout'])){
         //changing cartcount
         $cartcount_prev = fopen ("cartcount.txt","r");
         $cartcount = fopen("cartcount1.txt","w");
@@ -38,7 +43,6 @@
                 $quantity=rtrim($quantity,"\n");
                 if (strlen($price) != "0"){
                 $count++;
-
                 if ($_POST[$count] != $quantity ){
                 fputs($cartcount,$name."\n");
                 fputs($cartcount,$price."\n");
@@ -58,9 +62,7 @@
         fclose($cartcount_prev);
         unlink('cartcount.txt');
         rename('cartcount1.txt','cartcount.txt');
-        
-
-
+        }
 
 
 
@@ -100,10 +102,18 @@
                         fputs($file,$m);
                     }
                 fputs($file,"$\n");
-                fputs($file,$_POST["Address"]);
+                fputs($file,$_POST["Address"]."\n");
+                $m=date("d.m.Y");
+                fputs($file,$m."\n");
+                if (isset($_POST['upi'])) fputs($file,$_POST['upi']."\n");
+                else fputs($file,"Cash On Delivery\n");
                 fclose($file);
                 fclose($file1);
                 echo "Congo your order is placed !!";
+                $file=fopen('cart.txt','w');
+                fclose($file);
+                $file=fopen('cartcount.txt','w');
+                fclose($file);
                 echo "<meta http-equiv = \"refresh\" content = \"3; url = 'home.html'\"/>";
                 exit(1);
 
@@ -159,7 +169,7 @@
                     if ($total != 0) {
                         echo "<tr style=\"height: 100px;\">
                 <td>$product</td>
-                <td><input type=\"number\" class=\"quantity\" name=\"$product\" value=\"$quantity\"></td>
+                <td>$quantity</td>
                 <td>$eachprice</td>
                 <td>$total</td>
               </tr>";
