@@ -138,7 +138,7 @@
         else
         {
                 echo "You are not logged in!" ;
-                echo "<meta http-equiv=\"refresh\" content=\"3;url=login.\">" ;
+                echo "<meta http-equiv=\"refresh\" content=\"3;url=login.php\">" ;
         }
 ?>
                 </form>

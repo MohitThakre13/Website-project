@@ -183,7 +183,7 @@ transform: rotate(-15deg);
         fputs($file, $password);
         echo "Edit is Successfull!<br>";
         fclose($file);
-    }
+    
     $t = tempnam("", "temp.txt");
     $file = fopen('userinfo.txt', 'r');
     while (!feof($file)) {
@@ -214,7 +214,7 @@ transform: rotate(-15deg);
     }
     fclose($file);
     unlink('userinfo.txt');
-    rename('temp.txt', 'userinfo.txt');
+    rename('temp.txt', 'userinfo.txt');}
     ?>
     <form action="Account.php">
         <input type="submit" value="Back to Account Details">
