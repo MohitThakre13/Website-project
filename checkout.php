@@ -8,7 +8,7 @@
 
     <nav id="navigationbar">
         <ul id="Menubars">
-            <li><a href="home.html">HOME</a></li>
+            <li><a href="homecart.php">HOME</a></li>
             <li><a href="cart.php">CART</a></li>
             <li><a href="order.php">ORDER LIST</a></li>
             <li><a href="account.php">ACCOUNT</a></li>
@@ -114,7 +114,7 @@
                 fclose($file);
                 $file=fopen('cartcount.txt','w');
                 fclose($file);
-                echo "<meta http-equiv = \"refresh\" content = \"3; url = 'home.html'\"/>";
+                echo "<meta http-equiv = \"refresh\" content = \"3; url = 'homecart.php'\"/>";
                 exit(1);
 
 

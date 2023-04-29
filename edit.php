@@ -2,9 +2,53 @@
 
 <head>
     <title>Editing...</title>
+    <style>
+        * {
+    margin: 0px;
+}
+#navigationbar{
+    background-color: black;
+    display:flex;
+    justify-content: right;
+    height: 50px;
+    align-items: center;
+    position:sticky;
+    top:0px; 
+    z-index: 100;
+    
+}
+
+#navigationbar ul{
+    margin-right: 30px;
+    color:white ;
+    display:flex; 
+    list-style: none;
+    
+}
+#navigationbar ul li{
+    margin: 0px 10px;
+    border:2px solid white ;
+    padding: 3px;
+    border-radius:19px ;
+}
+#navigationbar ul li a{
+    padding: 13px;
+    text-decoration: none;
+    color:white ; 
+}
+
+        </style>
 </head>
 
 <body>
+<nav id="navigationbar">
+        <ul id="Menubars">
+            <li><a href="homecart.php">HOME</a></li>
+            <li><a href="cart.php">CART</a></li>
+            <li><a href="order.php">ORDER LIST</a></li>
+            <li><a href="account.php">ACCOUNT</a></li>
+        </ul>
+    </nav>
     <?php
     if (isset($_POST["log_out"])) {
         $file = fopen("login.txt", "w");
@@ -14,7 +58,7 @@
         fclose($file1);
         fclose($file);
         echo "<meta http-equiv = \"refresh\" content=\"0; url='login.php'\"/>";
-    } else {
+    } elseif(isset($_POST["edit"])) {
         $file = fopen('login.txt', 'r');
         $name = fgets($file);
         $username = fgets($file);
@@ -30,10 +74,10 @@
                 echo "Enter valid Phone No.<br>";
                 exit(1);
             }
-            $number = $_POST["number"] . "\n";
+            $number = $_POST["number"]."\n";
         }
-        if (strlen($_POST["email"]) != 0) $email = $_POST["email"] . "\n";
-        if (strlen($_POST["password"]) != 0 && $_POST["password"] == $_POST["confirm_password"]) $password = $_POST["password"] . "\n";
+        if (strlen($_POST["email"]) != 0) $email = $_POST["email"]."\n";
+        if (strlen($_POST["password"]) != 0 && $_POST["password"] == $_POST["confirm_password"]) $password = $_POST["password"]."\n";
         else{
             echo "confirm password is not matching !!"."<meta http-equiv = \"refresh\" content=\"3; url='account.php'\"/>";
 

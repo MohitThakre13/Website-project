@@ -8,7 +8,7 @@
 
         <nav id="navigationbar">
         <ul id="Menubars">
-            <li><a href="home.html">HOME</a></li>
+            <li><a href="homecart.php">HOME</a></li>
             <li><a href="cart.php">CART</a></li>
             <li><a href="order.php">ORDER LIST</a></li>
             <li><a href="account.php">ACCOUNT</a></li>
@@ -16,7 +16,10 @@
     </nav>
 
                 <form method="post" action="orderlist.php">
-<?php
+<?php   
+        $login=fopen('login.txt', 'r') ;
+        $name=fgets($login); 
+        if(strlen($name)>1){
                 $user="";
                  $file_tmp = fopen ("username.txt","r");
                  while (($m=fgetc($file_tmp)) != "\n") $user=$user.$m;
@@ -41,6 +44,12 @@
                     $count--;
                 }
                 closedir($handle);
+        }
+        else
+        {
+                echo "You are not logged in!" ;
+                echo "<meta http-equiv=\"refresh\" content=\"3;url=login.\">" ;
+        }
 ?>
                 </form>
         </body>

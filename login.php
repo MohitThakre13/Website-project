@@ -10,7 +10,7 @@
 <body>
     <nav id="navigationbar">
         <ul id="Menubars">
-            <li><a href="home.html">HOME</a></li>
+            <li><a href="homecart.php">HOME</a></li>
             <li><a href="cart.php">CART</a></li>
             <li><a href="order.php">ORDER LIST</a></li>
             <li><a href="account.php">ACCOUNT</a></li>
@@ -42,7 +42,7 @@
 
             if ($_POST["usernameoremail"]."\n" == $username ||  $_POST["usernameoremail"]."\n" == $email) {
                 if ($_POST["password"]."\n" == $password) {
-                    echo "Login Successfull!";
+                    // echo "Login Successfull!";
 
                     $file1 = fopen('login.txt', 'w');
                     

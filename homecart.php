@@ -2,12 +2,31 @@
 
 <head>
     <link rel="stylesheet" href="home.css">
+    <style>
+        
+      
+       .maincenter .paragraph span {
+	display: block;
+	opacity: 0;
+	animation: reveal 0.5s forwards var(--d);
+}
+@keyframes reveal {
+	from {
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+    </style>
 </head>
 
 <body>
     <nav id="navigationbar">
         <ul id="Menubars">
-            <li><a href="home.html">HOME</a></li>
+            <li><a href="homecart.php">HOME</a></li>
             <li><a href="cart.php">CART</a></li>
             <li><a href="order.php">ORDER LIST</a></li>
             <li><a href="account.php">ACCOUNT</a></li>
@@ -15,7 +34,11 @@
     </nav>
 
     <div class="maincenter">
-        <p>WELCOME</p>
+    <p class="paragraph">
+      <span style="--d: .5s; font-size:30pt;">Welcome</span>
+      <span style="--d: 1s;font-size:25pt;"><?php $file=fopen('login.txt', 'r'); $name=fgets($file); echo $name; ?></span>
+
+    </p>
     </div>
 
     <div class="content">
