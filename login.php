@@ -67,12 +67,14 @@
                     
                     exit(1);
                 } else {
-                    echo "Invalid Credential!<br>";
+                    echo "Invalid Password!<br>";
                     exit(1);
                     
                 }
             }
+            
         }
+        echo "Invalid username" ;
  
         fclose($file);
     }

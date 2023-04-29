@@ -18,11 +18,53 @@
     <form action="checkout.php" method="post">
         
 <?php   
+
         $user="";
         $file_tmp = fopen ("username.txt","r");
         while (($m=fgetc($file_tmp)) != "\n") $user=$user.$m;
         fclose($file_tmp);
         chdir($user);
+
+        //changing cartcount
+        $cartcount_prev = fopen ("cartcount.txt","r");
+        $cartcount = fopen("cartcount1.txt","w");
+        $count=0;
+        while (!feof($cartcount_prev)){
+                $name = fgets($cartcount_prev);
+                $price = fgets($cartcount_prev);
+                $quantity = fgets($cartcount_prev);
+                $name=rtrim($name,"\n");
+                $price=rtrim($price,"\n");
+                $quantity=rtrim($quantity,"\n");
+                if (strlen($price) != "0"){
+                $count++;
+
+                if ($_POST[$count] != $quantity ){
+                fputs($cartcount,$name."\n");
+                fputs($cartcount,$price."\n");
+                fputs($cartcount,$_POST[$count]."\n");
+                }
+                else if($_POST[$count] == "0");
+                else{
+                    fputs($cartcount,$name."\n");
+                    fputs($cartcount,$price."\n");
+                    fputs($cartcount,$quantity."\n");
+                }}
+                
+                
+        
+        }
+        fclose($cartcount);
+        fclose($cartcount_prev);
+        unlink('cartcount.txt');
+        rename('cartcount1.txt','cartcount.txt');
+        
+
+
+
+
+
+        //
         
         if(!isset($_POST["next"]) && !isset($_POST["payment"])) echo "<p><label for=\"payid\">Choose your payment method :</label></p>
         <p><input type=\"radio\" name=\"payid\" value=\"UPI\" id=\"payid\"/>UPI payment</p>

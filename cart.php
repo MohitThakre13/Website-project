@@ -99,7 +99,8 @@ chdir($user);
 
 
                 $file = fopen("cartcount.txt", "r");
-                echo "<form action=\"checkout.php\" method=\"post\">"; 
+                echo "<form action=\"checkout.php\" method=\"post\">";
+                $count=0;
                 while (!feof($file)) {
                     $product = fgets($file);
                     $eachprice = fgets($file);
@@ -108,15 +109,17 @@ chdir($user);
                     $quantity = rtrim($quantity, "\n");
                     $product = rtrim($product, "\n");
                     $total = (int)$eachprice * (int)$quantity;
+                    $count++;
                     if ($total != 0) {
                         echo "<tr style=\"height: 100px;\">
                 <td>$product</td>
-                <td><input type=\"number\" class=\"quantity\" name=\"$product\" value=\"$quantity\"></td>
+                <td><input type=\"number\" class=\"quantity\" name=\"$count\" value=\"$quantity\"></td>
                 <td>$eachprice</td>
                 <td>$total</td>
               </tr>";
                     }
                 }
+                echo "    <input type=\"submit\" name=\"checkout\" value=\"checkout\"><br>";
                 echo "</form>" ;
 
 
@@ -132,9 +135,8 @@ chdir($user);
 
     <form action="cart.php" method="post">
         <input type="submit" name="clear" value="Remove ALL"><br>
+
     </form>
-    <form action="checkout.php" method="post">
-    <input type="submit" name="checkout" value="checkout"><br>
 </body>
 
 </html>
