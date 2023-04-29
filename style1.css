@@ -1,0 +1,118 @@
+body
+    {
+        margin:0;
+        padding:0;
+        background-image: url('img.jpg');
+        background-repeat: no-repeat;
+        background-size: 1200px 700px;
+    }
+h1
+    {
+        position:absolute;
+        top:10%;
+        left:35%;
+        transform:translate(-50%,0%);
+        padding: 0 20px;
+        font-family:cursive;
+        font-size:2.6em;
+        text-shadow:0 10px 20px rgba(0,0,0,.3);
+        text-transform:uppercase;
+        border:8px solid #000;
+        border-top:none;
+        color:rgb(255, 255, 255);
+    }
+h1 span
+    {
+        position: relative;
+        display: inline-block;
+    }
+h1 span:nth-child(3)
+{
+    color:rgb(92, 160, 249);
+    animation: animate 3s alternate infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(0px) rotate(0deg);
+    }
+    40%
+    {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50%
+    {
+        transform: translateY(-40px) rotate(180deg);
+    }
+    60%
+    {
+        transform: translateY(0px) rotate(360deg);
+    }
+    100%
+    {
+        transform: translateY(0px) rotate(360deg);
+    } 
+    
+}
+
+h1 span
+    {
+        animation: animate 5s  alternate infinite;
+    }
+h1 span:nth-child(1)
+    {
+        animation-delay: 0s;
+    }
+h1 span:nth-child(2)
+    {
+        animation-delay: 0.2s;
+    }
+    h1 span:nth-child(3)
+    {
+        animation-delay: 0.6s;
+    }h1 span:nth-child(4)
+    {
+        animation-delay: 0.7s;
+    }h1 span:nth-child(5)
+    {
+        animation-delay: 0.6s;
+    }h1 span:nth-child(5)
+    {
+        animation-delay: 0.8s;
+    }h1 span:nth-child(6)
+    {
+        animation-delay: 0.9s;
+    }h1 span:nth-child(7)
+    {
+        animation-delay: 1s;
+    }h1 span:nth-child(8)
+    {
+        animation-delay: 1.2s;
+    }h1 span:nth-child(9)
+    {
+        animation-delay: 1.4s;
+    }h1 span:nth-child(10)
+    {
+        animation-delay: 1.6s;
+    }
+    /* Thick red border */
+
+
+
+/* #style{
+        display: flex ;
+        position: relative;
+}
+#style h3 {
+    display:inline ;
+    position :relative ;
+    bottom:200px;
+} */
+h3{
+    color:rgb(212, 244, 6);
+    position:absolute;
+    font-size: 25pt;
+        top:23%;
+        left:21%;
+}
