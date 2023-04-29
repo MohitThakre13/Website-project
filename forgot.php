@@ -145,9 +145,9 @@
             $email=fgets($file); 
             $password=fgets($file); 
 
-            if($_POST['name']."\n"==$name && $_POST["username"]."\n"==$username && $_POST["number"]."\n"==$username  &&$_POST["email"]."\n"==$username  )
-            echo "$password" ;
-            break ;
+            if($_POST['name']."\n"==$name && $_POST["username"]."\n"==$username && $_POST["number"]."\n"==$number  &&$_POST["email"]."\n"==$email  )
+            {echo "<h3 style=\"text-align:center;\">$password</h3>" ;
+            exit(1) ;}
             
         }
         echo "No such user exist or check credentials" ;

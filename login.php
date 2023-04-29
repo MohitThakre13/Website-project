@@ -114,7 +114,7 @@
             <div class="forgotandsubmit">
             <input type="submit" value="login" name="login">
         </form>
-        <a href=#>forgot password </a><br>
+        <a href="forgot.php">forgot password </a><br>
         
     </div>
     <a style="margin-right:-15%; margin-top:-30%;" href=signup.php>Create an new account</a><br>
