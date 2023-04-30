@@ -169,7 +169,7 @@ transform: rotate(-15deg);
         }
         if (strlen($_POST["email"]) != 0) $email = $_POST["email"]."\n";
         if (strlen($_POST["password"]) != 0 && $_POST["password"] == $_POST["confirm_password"]) $password = $_POST["password"]."\n";
-        else{
+        elseif(strlen($_POST["password"]) != 0 ){
             echo "confirm password is not matching !!"."<meta http-equiv = \"refresh\" content=\"3; url='account.php'\"/>";
 
             exit(1);
